@@ -24,8 +24,8 @@ from qualifier.filters.credit_score import filter_credit_score
 from qualifier.filters.debt_to_income import filter_debt_to_income
 from qualifier.filters.loan_to_value import filter_loan_to_value
 
-#Insert save_csv modular function from fileio.py
-#from qualifier.utils.fileio import save_csv 
+#Impot save_csv() function from fileio.py module
+from qualifier.utils.fileio import save_csv 
 
 
 def load_bank_data():
@@ -108,28 +108,6 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
 
     return bank_data_filtered
 
-def save_csv(data):
-    """Creating a new function called save_csv that saves a csv file
-    
-    Returns:
-        A csv file with the saved data
-    """   
-
-    bank_data = data
-    #Creating headers for the csv file
-    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Max Credit Score", "Interest Rate"]
-
-    csvpath = Path("save_file.csv")
-
-    #Opening the csv file in csvpath by using the open() method
-    with open(csvpath, "w", newline='') as csvfile:
-
-        csvwriter = csv.writer(csvfile, delimiter = ",")
-        csvwriter.writerow(header)
-        for row in bank_data:
-            csvwriter.writerow(row)
-
-    return data
 
 
 def save_qualifying_loans(qualifying_loans):
