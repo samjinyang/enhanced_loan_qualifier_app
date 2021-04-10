@@ -102,6 +102,25 @@ def find_qualifying_loans(bank_data, credit_score, debt, income, loan, home_valu
     return bank_data_filtered
 
 
+def save_csv(data):
+    """Creating a new function called save_csv that saves a csv file"""   
+
+    #Creating headers for the csv file
+    header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Max Credit Score", "Interest Rate"]
+
+    csvpath = Path("save_file.csv")
+
+    #Opening the csv file in csvpath by using the open() method
+    with open(csvpath, w, newline='') as csvfile:
+
+        csvwriter = csv.writer(csvfile, delimiter=",")
+        csvwriter.writerow(header)
+        for row in data:
+            csvwriter.writerow(row)
+
+    return data
+
+
 def save_qualifying_loans(qualifying_loans):
     """Saves the qualifying loans to a CSV file.
 
@@ -110,6 +129,7 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
+
 
 
 def run():
