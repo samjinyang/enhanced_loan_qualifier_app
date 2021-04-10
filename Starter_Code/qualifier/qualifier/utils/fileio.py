@@ -34,7 +34,7 @@ def save_csv(data):
     """Creating a new function called save_csv that saves a csv file
 
     Args:
-        data: The list of filtered loans that the user qualifies for
+        data (list of lists): The list of filtered loans that the user qualifies for
     
     Returns:
         A csv file with the saved data
