@@ -138,9 +138,6 @@ def save_qualifying_loans(qualifying_loans):
 
         else:
             sys.exit("Your file has not been saved.  Thank you for using our app!")
-    
-            
-
 
 
 
