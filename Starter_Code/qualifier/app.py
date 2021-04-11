@@ -133,6 +133,7 @@ def save_qualifying_loans(qualifying_loans):
             csvoutpath = Path(csvoutpath)
             print (f"Your file has been saved in {csvoutpath}.  Thank you for using our app!")
 
+            #Deleted save_csv from run(), and calling it here to save the file from user's input
             return save_csv(qualifying_loans)
 
         else:
