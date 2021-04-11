@@ -116,8 +116,31 @@ def save_qualifying_loans(qualifying_loans):
     Args:
         qualifying_loans (list of lists): The qualifying bank loans.
     """
-    # @TODO: Complete the usability dialog for savings the CSV Files.
+
+    # @TODO: Complete the usability dialog for saving the CSV Files.
     # YOUR CODE HERE!
+
+    #Setting a condition where if the user does not qualify for any loans, the app will print a message and exit the app
+    if qualifying_loans == []:
+        sys.exit("You have no qualifying loans at this time.  Please try again at another time.  Thank you.")
+
+    #Using Quesionary confirm() to get user input of whether they want to save their CSV file or not
+    else:
+        confirm_save = questionary.confirm("Would you like to save your file?  Type 'y' for Yes or 'n' for No.").ask()
+        
+        if confirm_save == True:
+            csvoutpath = questionary.text("Enter a file path of where you would like to save your file.").ask()
+            csvoutpath = Path(csvoutpath)
+            print (f"Your file has been saved in {csvoutpath}.  Thank you for using our app!")
+
+            return save_csv(qualifying_loans)
+
+        else:
+            sys.exit("Your file has not been saved.  Thank you for using our app!")
+    
+            
+
+
 
 
 
@@ -134,8 +157,6 @@ def run():
     qualifying_loans = find_qualifying_loans(
         bank_data, credit_score, debt, income, loan_amount, home_value
     )
-
-    save_csv(qualifying_loans)
 
     # Save qualifying loans
     save_qualifying_loans(qualifying_loans)
