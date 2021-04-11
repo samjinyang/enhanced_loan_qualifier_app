@@ -17,9 +17,9 @@ This app prompts the user for certain financial data in order to see which banks
 To use the app, just download the **Starter_Code** folder, and use either **Terminal** or **Git Bash** to open the **app.py** file in Python.
 To run the app, type:
 
-'''python
+```python
 python app.py
-'''
+```
 
 ---
 
