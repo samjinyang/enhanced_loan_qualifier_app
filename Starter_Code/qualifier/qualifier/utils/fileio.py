@@ -45,7 +45,7 @@ def save_csv(data):
     header = ["Lender", "Max Loan Amount", "Max LTV", "Max DTI", "Max Credit Score", "Interest Rate"]
 
     #Creating output path of the CSV file
-    csvpath = Path("./data/output/save_file.csv")
+    csvpath = Path("save_file.csv")
 
     #Opening the csv file in csvpath by using the open() method
     with open(csvpath, "w", newline='') as csvfile:
